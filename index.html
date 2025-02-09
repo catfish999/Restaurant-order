@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+	<body>
+	<div class="item">
+		<label>木須牛肉炒麵</label><br>
+		<button onclick="changeQuantity('tomatobeef', -1)">➖</button>
+		<input type="number" id="tomatobeef" class="quantity" value="0">
+        <button onclick="changeQuantity('tomatobeef', 1)">➕</button>
+	</div>
+	    <button onclick="submitOrder()">送出訂單</button>
+	    <script>
+        function changeQuantity(item, amount) {
+            let inputField = document.getElementById(item);
+            let currentValue = parseInt(inputField.value);
+            let newValue = currentValue + amount;
+
+            if (newValue < 0) 
+            {
+                newValue = 0; 
+            }
+
+            inputField.value = newValue;
+        }
+
+        function submitOrder() {
+            let order = {
+                ramen: document.getElementById("tomatobeef").value,
+                friedRice: document.getElementById("friedRice").value,
+                friedChicken: document.getElementById("friedChicken").value
+            };
+
+            let finalOrder = {};
+            for (let item in order) {
+                if (parseInt(order[item]) > 0) {
+                    finalOrder[item] = order[item];
+                }
+            }
+
+            if (Object.keys(finalOrder).length === 0) {
+                alert("請至少選擇一項餐點！");
+                return;
+            }
+
+            fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(finalOrder)
+            })
+            .then(response => response.json())
+            .then(data => alert("訂單送出：" + data.status));
+        }
+    </script>
+	</body>
