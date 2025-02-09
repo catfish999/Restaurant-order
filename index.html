@@ -12,6 +12,7 @@
         <button onclick="changeQuantity('tomatobeef', 1)">➕</button>
 	</div>
 	    <button onclick="submitOrder()">送出訂單</button>
+	
 	    <script>
         function changeQuantity(item, amount) {
             let inputField = document.getElementById(item);
@@ -28,9 +29,7 @@
 
         function submitOrder() {
             let order = {
-                ramen: document.getElementById("tomatobeef").value,
-                friedRice: document.getElementById("friedRice").value,
-                friedChicken: document.getElementById("friedChicken").value
+                tomatobeef: document.getElementById("tomatobeef").value,
             };
 
             let finalOrder = {};
@@ -40,18 +39,23 @@
                 }
             }
 
-            if (Object.keys(finalOrder).length === 0) {
+            if (Object.keys(finalOrder).length == 0) {
                 alert("請至少選擇一項餐點！");
                 return;
             }
-
-            fetch("https://script.google.com/macros/s/AKfycbxrOIdm1BqVz1vIdpqNlGXtjMIIQrdCujvJSRVvJfSTvnwDxE1nQRnC-QQtU-6chNRD/exec", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(finalOrder)
-            })
-            .then(response => response.json())
-            .then(data => alert("訂單送出：" + data.status));
+fetch("https://script.google.com/macros/s/AKfycbzaBxS1fVmE0qwmiFoMS694KG90ogZU_HJ0non_-Y9FYxbkLakXrxz6cgUivLOw6l5s9A/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(finalOrder)
+})
+.then(response => response.json())
+.then(data => {
+    alert("訂單送出：" + data.status);
+})
+.catch(error => {
+    console.error("發生錯誤：", error);
+    alert("送出失敗，請稍後再試！");
+});
         }
     </script>
 	</body>
