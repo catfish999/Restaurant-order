@@ -3,15 +3,109 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-<form action="https://script.google.com/macros/s/AKfycbxtAyGp_WGxNNZtQ05-ys_mqTigTsES0yLLwxGjGLWAQ6L-OvFM3295iYwCmR9ALOz7/exec" method="post" target="hidden_iframe">
+<form    action="https://script.google.com/macros/s/AKfycbwHv-rsTR7OHDiBM-n3eQWJzBlVia_6P5wJOXYtWj2FHRuxr7fYm2TU9aTuMCtr6ok/exec"
+method="post">
 <input type="hidden" name="method" value="write" />
-<input type="text" name="name" placeholder="填入稱謂" title="填入稱謂" /><br/>
-<input type="text" name="sex" placeholder="填入性別" title="填入性別" /><br/>
-<input type="text" name="remark" placeholder="填入註解" title="填入註解" /><br/>
-<input type="submit" value="提交" />
+<label>桌號</label>
+<select>
+  <option selected disabled></option>
+  <option>外帶</option>
+  <option>1桌</option>
+  <option>2桌</option>
+  <option>3桌</option>
+  <option>4桌</option>
+  <option>5桌</option>
+  <option>6桌</option>
+  <option>7桌</option>
+  <option>8桌</option>
+  <option>9桌</option>
+  <option>10桌</option>
+  <option>11桌</option>
+  <option>12桌</option>
+  <option>13桌</option>
+  <option>14桌</option>
+  <option>15桌</option>
+  <option>16桌</option>
+  <option>17桌</option>
+  <option>18桌</option>
+  <option>19桌</option>
+</select><br>
+//<input type="text" name="name" placeholder="填入稱謂" title="填入稱謂" /><br/>
+//<input type="text" name="sex" placeholder="填入性別" title="填入性別" /><br/>
+//<input type="text" name="remark" placeholder="填入註解" title="填入註解" /><br/>
+<div>
+ <label for="fbnoodle">木須牛肉炒麵</label><br>
+  <button onclick="changefbnoodle(-1)" type="button">➖</button>
+ <input type="number" name="fbnoodle" id="fbnoodle" value=0 readonly>
+  <button onclick="changefbnoodle(1)" type="button">➕</button>
+<select>
+  <option></option>
+  <option>加辣</option>
+  <option>少油鹽</option>
+  <option>不要菜</option>
+  <option>不要胡椒</option>
+  <option>不要紅蘿蔔</option>
+  <option>不要黑木耳</option>
+</select><br>
+<label>備註</label>
+<input type="text"></div>
+<div>
+  <label for="fpnoodle">木須豬肉炒麵</label><br>
+  <button onclick="changefpnoodle(-1)" type="button">➖</button>
+ <input type="number" name="fpnoodle" id="fpnoodle" value=0 readonly>
+  <button onclick="changefpnoodle(1)" type="button">➕</button></div>
+<div>
+  <label for="fnoodle">木須素炒麵</label><br>
+  <button onclick="changefnoodle(-1)" type="button">➖</button>
+ <input type="number" name="fnoodle" id="fnoodle" value=0 readonly>
+  <button onclick="changefnoodle(1)" type="button">➕</button></div>
+<div>
+  <label for="bcookie">牛肉炒餅</label><br>
+  <button onclick="changebcookie(-1)" type="button">➖</button>
+ <input type="number" name="bcookie" id="bcookie" value=0 readonly>
+  <button onclick="changebcookie(1)" type="button">➕</button></div>
+<div>
+  <label for="pcookie">肉絲炒餅</label><br>
+  <button onclick="changepcookie(-1)" type="button">➖</button>
+ <input type="number" name="pcookie" id="pcookie" value=0 readonly>
+  <button onclick="changepcookie(1)" type="button">➕</button></div>
+<div>
+  <label for="bcake">牛肉炒年糕</label><br>
+  <button onclick="changebcake(-1)" type="button">➖</button>
+ <input type="number" name="bcake" id="bcake" value=0 readonly>
+  <button onclick="changebcake(1)" type="button">➕</button></div>
+<div>
+  <label for="pcake">肉絲炒年糕</label><br>
+  <button onclick="changepcake(-1)" type="button">➖</button>
+ <input type="number" name="pcake" id="pcake" value=0 readonly>
+  <button onclick="changepcake(1)" type="button">➕</button></div>
+<div>
+  <label for="pcrice">排骨蛋飯</label><br>
+  <button onclick="changepcrice(-1)" type="button">➖</button>
+ <input type="number" name="pcrice" id="pcrice" value=0 readonly>
+  <button onclick="changepcrice(1)" type="button">➕</button></div>
+<div>
+  <label for="brice">牛肉蛋炒飯</label><br>
+  <button onclick="changebrice(-1)" type="button">➖</button>
+ <input type="number" name="brice" id="brice" value=0 readonly>
+  <button onclick="changebrice(1)" type="button">➕</button></div>
+<div>
+  <label for="price">肉絲蛋炒飯</label><br>
+  <button onclick="changeprice(-1)" type="button">➖</button>
+ <input type="number" name="price" id="price" value=0 readonly>
+  <button onclick="changeprice(1)" type="button">➕</button></div>
+<div>
+  <label for="porkchop">炸排骨</label><br>
+  <button onclick="changeporkchop(-1)" type="button">➖</button>
+ <input type="number" name="porkchop" id="porkchop" value=0 readonly>
+  <button onclick="changeporkchop(1)" type="button">➕</button></div>
+
+<button type="submit" onclick="return confirm('確認送出？')">送出訂單</button>
 </form>
+  <script src="script.js"></script>
 </body>
 </html>
